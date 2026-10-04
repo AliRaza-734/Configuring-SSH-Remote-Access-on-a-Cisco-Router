@@ -1,0 +1,15 @@
+! SSH Remote Access Lab - R1
+!
+ip domain-name rst.net
+crypto key generate rsa
+! modulus: 2048
+ip ssh version 2
+!
+username cisco secret cisco123
+enable secret sunny
+!
+line vty 0 4
+ login local
+ transport input all
+! Recommended for real networks: transport input ssh
+exit
